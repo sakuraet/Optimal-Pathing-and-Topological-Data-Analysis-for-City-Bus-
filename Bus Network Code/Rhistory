@@ -1,0 +1,512 @@
+V(BS)$membership <- membership(BS_comm)
+write_graph(BS, "bus_network_simplified_springlass.graphml", format="graphml")
+summary(BS)
+largest_community_id <- which.max(sizes(BS_comm))
+largest_community <- induced.subgraph(BS_u, which(membership(BS_comm) == largest_community_id))
+tibble(
+"Amount of Communities" = length(communities(BS_comm)),
+"Size of Largest Community" = length(V(largest_community))
+)
+plot(BS_comm, BS_u, vertex.label = NA, vertex.size = 2.5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS_u)$longitude), ylim = scale*range(V(BS_u)$latitude))
+# pdf("BusNetworkPlot.pdf",10,10)
+# plot(BS_comm, BS, vertex.label = NA, vertex.size = 2.5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS)$longitude), ylim = scale*range(V(BS)$latitude))
+# dev.off()
+BS_u <- as_undirected(BS, mode = "collapse")
+BS_comm <- cluster_leiden(BS_u, resolution = 0.0000043)
+V(BS)$membership <- membership(BS_comm)
+write_graph(BS, "bus_network_simplified_springlass.graphml", format="graphml")
+summary(BS)
+largest_community_id <- which.max(sizes(BS_comm))
+largest_community <- induced.subgraph(BS_u, which(membership(BS_comm) == largest_community_id))
+tibble(
+"Amount of Communities" = length(communities(BS_comm)),
+"Size of Largest Community" = length(V(largest_community))
+)
+plot(BS_comm, BS_u, vertex.label = NA, vertex.size = 2.5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS_u)$longitude), ylim = scale*range(V(BS_u)$latitude))
+pdf("BusNetworkPlot.pdf",10,10)
+plot(BS_comm, BS, vertex.label = NA, vertex.size = 2.5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS)$longitude), ylim = scale*range(V(BS)$latitude))
+dev.off()
+BS_u <- as_undirected(BS, mode = "collapse")
+BS_comm <- cluster_leiden(BS_u, resolution = 0.000004)
+V(BS)$membership <- membership(BS_comm)
+write_graph(BS, "bus_network_simplified_springlass.graphml", format="graphml")
+summary(BS)
+largest_community_id <- which.max(sizes(BS_comm))
+largest_community <- induced.subgraph(BS_u, which(membership(BS_comm) == largest_community_id))
+tibble(
+"Amount of Communities" = length(communities(BS_comm)),
+"Size of Largest Community" = length(V(largest_community))
+)
+plot(BS_comm, BS_u, vertex.label = NA, vertex.size = 2.5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS_u)$longitude), ylim = scale*range(V(BS_u)$latitude))
+pdf("BusNetworkPlot.pdf",10,10)
+plot(BS_comm, BS, vertex.label = NA, vertex.size = 2.5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS)$longitude), ylim = scale*range(V(BS)$latitude))
+dev.off()
+BS_u <- as_undirected(BS, mode = "collapse")
+BS_comm <- cluster_leiden(BS_u, resolution = 0.000004)
+V(BS)$membership <- membership(BS_comm)
+write_graph(BS, "bus_network_simplified_springlass.graphml", format="graphml")
+summary(BS)
+largest_community_id <- which.max(sizes(BS_comm))
+largest_community <- induced.subgraph(BS_u, which(membership(BS_comm) == largest_community_id))
+tibble(
+"Amount of Communities" = length(communities(BS_comm)),
+"Size of Largest Community" = length(V(largest_community))
+)
+plot(BS_comm, BS_u, vertex.label = NA, vertex.size = 2.5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS_u)$longitude), ylim = scale*range(V(BS_u)$latitude))
+pdf("BusNetworkCommunityPlot.pdf",10,10)
+plot(BS_comm, BS, vertex.label = NA, vertex.size = 2.5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS)$longitude), ylim = scale*range(V(BS)$latitude))
+dev.off()
+BS_u <- as_undirected(BS, mode = "collapse")
+BS_comm <- cluster_leiden(BS_u, resolution = 0.000004)
+V(BS)$membership <- membership(BS_comm)
+write_graph(BS, "bus_network_simplified_springlass.graphml", format="graphml")
+summary(BS)
+largest_community_id <- which.max(sizes(BS_comm))
+largest_community <- induced.subgraph(BS_u, which(membership(BS_comm) == largest_community_id))
+tibble(
+"Amount of Communities" = length(communities(BS_comm)),
+"Size of Largest Community" = length(V(largest_community))
+)
+plot(BS_comm, BS_u, vertex.label = NA, vertex.size = 2.5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS_u)$longitude), ylim = scale*range(V(BS_u)$latitude))
+pdf("BusNetworkCommunityPlot.pdf",10,10)
+plot(BS_comm, BS, vertex.label = NA, vertex.size = 2.5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS)$longitude), ylim = scale*range(V(BS)$latitude))
+dev.off()
+BS_comm2 <- cluster_label_prop(BS_u, mode="out")
+V(BS)$membership <- membership(BS_comm2)
+write_graph(BS, "bus_network_simplified_springlass.graphml", format="graphml")
+summary(BS)
+largest_community_id <- which.max(sizes(BS_comm2))
+largest_community <- induced.subgraph(BS, which(membership(BS_comm2) == largest_community_id))
+tibble(
+"Amount of Communities" = length(communities(BS_comm2)),
+"Size of Largest Community" = length(V(largest_community))
+)
+plot(BS_comm2, BS, vertex.label = NA, vertex.size = 2.5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS)$longitude), ylim = scale*range(V(BS)$latitude))
+BS_comm2 <- cluster_label_prop(BS, mode="out")
+V(BS)$membership <- membership(BS_comm2)
+write_graph(BS, "bus_network_simplified_springlass.graphml", format="graphml")
+summary(BS)
+largest_community_id <- which.max(sizes(BS_comm2))
+largest_community <- induced.subgraph(BS, which(membership(BS_comm2) == largest_community_id))
+tibble(
+"Amount of Communities" = length(communities(BS_comm2)),
+"Size of Largest Community" = length(V(largest_community))
+)
+plot(BS_comm2, BS, vertex.label = NA, vertex.size = 2.5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS)$longitude), ylim = scale*range(V(BS)$latitude))
+?cluster_label_prop
+BS_comm2 <- cluster_label_prop(BS, mode="out")
+V(BS)$membership <- membership(BS_comm2)
+write_graph(BS, "bus_network_simplified_springlass.graphml", format="graphml")
+summary(BS)
+largest_community_id <- which.max(sizes(BS_comm2))
+largest_community <- induced.subgraph(BS, which(membership(BS_comm2) == largest_community_id))
+tibble(
+"Amount of Communities" = length(communities(BS_comm2)),
+"Size of Largest Community" = length(V(largest_community))
+)
+plot(BS_comm2, BS, vertex.label = NA, vertex.size = 2.5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS)$longitude), ylim = scale*range(V(BS)$latitude))
+BS_u <- as_undirected(BS, mode = "collapse")
+BS_comm <- cluster_leiden(BS_u, resolution = 0.000004)
+V(BS)$membership <- membership(BS_comm)
+write_graph(BS, "bus_network_simplified_springlass.graphml", format="graphml")
+largest_community_id <- which.max(sizes(BS_comm))
+largest_community <- induced.subgraph(BS_u, which(membership(BS_comm) == largest_community_id))
+tibble(
+"Amount of Communities" = length(communities(BS_comm)),
+"Size of Largest Community" = length(V(largest_community))
+)
+plot(BS_comm, BS_u, vertex.label = NA, vertex.size = 2.5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS_u)$longitude), ylim = scale*range(V(BS_u)$latitude))
+pdf("BusNetworkCommunityPlot.pdf",10,10)
+plot(BS_comm, BS, vertex.label = NA, vertex.size = 2.5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS)$longitude), ylim = scale*range(V(BS)$latitude))
+dev.off()
+BS_comm2 <- cluster_label_prop(BS, mode="out")
+V(BS)$membership <- membership(BS_comm2)
+write_graph(BS, "bus_network_simplified_springlass.graphml", format="graphml")
+largest_community_id <- which.max(sizes(BS_comm2))
+largest_community <- induced.subgraph(BS, which(membership(BS_comm2) == largest_community_id))
+tibble(
+"Amount of Communities" = length(communities(BS_comm2)),
+"Size of Largest Community" = length(V(largest_community))
+)
+plot(BS_comm2, BS, vertex.label = NA, vertex.size = 2.5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS)$longitude), ylim = scale*range(V(BS)$latitude))
+source("G:/Shared drives/F24 Research/Bus Network Code/bus.Rmd")
+BS_u <- as_undirected(BS, mode = "collapse")
+BS_comm <- cluster_leiden(BS_u, resolution = 0.000004)
+V(BS)$membership <- membership(BS_comm)
+write_graph(BS, "bus_network_simplified_springlass.graphml", format="graphml")
+largest_community_id <- which.max(sizes(BS_comm))
+largest_community <- induced.subgraph(BS_u, which(membership(BS_comm) == largest_community_id))
+tibble(
+"Amount of Communities" = length(communities(BS_comm)),
+"Size of Largest Community" = length(V(largest_community))
+)
+plot(BS_comm, BS_u, vertex.label = NA, vertex.size = 2.5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS_u)$longitude), ylim = scale*range(V(BS_u)$latitude))
+# pdf("BusNetworkCommunityPlot.pdf",10,10)
+# plot(BS_comm, BS, vertex.label = NA, vertex.size = 2.5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS)$longitude), ylim = scale*range(V(BS)$latitude))
+# dev.off()
+source("G:/Shared drives/F24 Research/Bus Network Code/bus.Rmd")
+include_graphics("images/Honolulu_County_districts.png")
+source("G:/Shared drives/F24 Research/Bus Network Code/bus.Rmd")
+source("G:/Shared drives/F24 Research/Bus Network Code/bus.Rmd")
+include_graphics("images/Honolulu_County_districts.png")
+tibble(
+1 = "Waianae",
+include_graphics("images/Honolulu_County_districts.png")
+tibble(
+"1" = "Waianae",
+"2" = "Wahiawa and North Shore",
+"3" = "Kailua",
+"4" = "Hawai'i Kai",
+"5" = "Manoa Valley",
+"6" = "Downtown Honolulu",
+"7" = "Kalihi",
+"8" = "Pearl City",
+"9" = "Kapolei"
+)
+source("G:/Shared drives/F24 Research/Bus Network Code/bus.Rmd")
+source("G:/Shared drives/F24 Research/Bus Network Code/bus.Rmd")
+source("G:/Shared drives/F24 Research/Bus Network Code/bus.Rmd")
+BS_adj <- as_adjacency_matrix(BS)
+BS_adj
+?as_adjacency_matrix()
+BS_adj <- as_adjacency_matrix(BS, attr = E(BS)$weight)
+zeros
+?matrix
+matrix(0, ncol = 7, nrow = 7)
+size(V(BS))
+length(V(BS))
+summary(BS)
+V(BS)[1]
+BS_adj
+dim(NW_adj)
+dim(BS_adj)
+for (i,j in (1,1):dim(BS_adj)){}
+for (i,j in (1,1):dim(BS_adj)){print c(i,j)}
+dim(BS_adj)[1]
+E(BS)
+E(BS)[1,2]
+E(BS)[1]
+E(BS)[2]
+BS.edge
+BS.get_edge
+E(BS)
+?E(BS)
+[BS]
+BS[]
+as_weight_matrix <- function(NW){
+NW[]
+}
+BS_adj <- as_weight_matrix(BS)
+BS_adj
+show(BS_adj)
+?diag
+zeroes(1)
+zeros(1)
+matrix(0, 5, 5)
+matrix(0, 5, 5)[1,]
+as_weight_matrix <- function(NW){
+NW[]
+}
+as_degree_matrix <- function(NW){
+n <- length(V(NW))
+WNW <- as_weight_matrix(NW)
+A <- matrix(0, n, n)
+for (i in (1:n)){
+A[i,i] <- sum(WNW[,i])
+}
+A
+}
+BS_adj <- as_weight_matrix(BS)
+BS_deg <- as_degree_matrix(BS)
+BS_deg
+is_diag
+?diag
+diag(BS_deg) == BS_deg
+is.diagonal.matrix(BS_deg)
+install.packages("matrixcalc")
+require("knitr")
+opts_chunk$set(echo = TRUE) # Display code in the output document
+opts_chunk$set(comment="")  # Get rid of ## on output knit to html.
+library(tibble) # Import first so it does not mask igraph simplify
+library(igraph)
+library(linkcomm)
+library(jpeg)
+library(png)
+library(raster)
+library(moments)
+library(measurements)
+library(matrixcalc)
+source("Utility/binned_histogram.r")
+source("Utility/degree_domain.r")
+source("Utility/giant_component.r")
+source("Utility/new_window.r")
+source("Utility/nonzero_degree_distribution.r")
+source("Utility/nonzero_degrees.r")
+source("Utility/reify_link_communities.r")
+source("Utility/remove_isolates.r")
+# source("Utility/robustness_simulation.r")
+source("Utility/robustness_simulation_utility.r")
+source("Utility/top_n_vertices.r")
+is.diagonal.matrix(BS_deg)
+as_weight_matrix <- function(NW){
+NW[]
+}
+as_degree_matrix <- function(NW){
+n <- length(V(NW))
+WNW <- as_weight_matrix(NW)
+A <- matrix(0, n, n)
+for (i in (1:n)){
+A[i,i] <- sum(WNW[,i])
+}
+A
+}
+BS_adj <- as_weight_matrix(BS)
+BS_deg <- as_degree_matrix(BS)
+BS_lap <- BS_deg - BS_adj
+eigen(BS_lap)
+?eigen
+as_weight_matrix <- function(NW){
+NW[]
+}
+as_degree_matrix <- function(NW){
+n <- length(V(NW))
+WNW <- as_weight_matrix(NW)
+A <- matrix(0, n, n)
+for (i in (1:n)){
+A[i,i] <- sum(WNW[,i])
+}
+A
+}
+BS_adj <- as_weight_matrix(BS)
+BS_deg <- as_degree_matrix(BS)
+BS_lap <- BS_deg - BS_adj
+BS_eigen <- eigen(BS_lap)
+tibble(
+"Fiedler Vector" = BS_eigen$vectors[length(V(BS))-1],
+"Fielder Number" = BS_eigen$values[length(V(BS))-1]
+)
+BS_eigen
+k <- length(V(BS))-1
+k
+BS_eigen$vectors[length(V(BS))-1]
+BS_eigen$vectors[length(V(BS))-1,:]
+BS_eigen$vectors[length(V(BS))-1,]
+A <- matrix(0, 5, 5)
+A[1,]
+A[,]
+A[,1]
+BS_eigen$vectors[,length(V(BS))-1]
+BS_fied <- BS_eigen$vectors[,length(V(BS))-1]
+re(BS_fied)
+Re(BS_fied)
+max(Re(BS_fied))
+normalized_BS_fiedv<-Re(BS_fiedv)/max(Re(BS_fiedv))
+BS_fiedv <- BS_eigen$vectors[,length(V(BS))-1]
+normalized_BS_fiedv<-Re(BS_fiedv)/max(Re(BS_fiedv))
+?colors
+?colors
+?colors()[]
+colors()[]
+normalized_BS_fiedv<-Re(BS_fiedv)/max(Re(BS_fiedv))
+unique(normalized_BS_fiedv<-Re(BS_fiedv)/max(Re(BS_fiedv)))
+length(unique(normalized_BS_fiedv<-Re(BS_fiedv)/max(Re(BS_fiedv))))
+length(normalized_BS_fiedv<-Re(BS_fiedv)/max(Re(BS_fiedv)))
+?colfunc
+?colorRampPalette
+colfunc <- colorRampPalette(c("red", "blue"))
+colfunc(length(unique(normalized_BS_fiedv<-Re(BS_fiedv)/max(Re(BS_fiedv)))))
+for (i in 1:(length(V(BS)))){
+V(BS)$color <- colfunc(normalized_BS_fiedv[i])
+}
+colfunc <- colorRampPalette(c("red", "blue"))
+colfunc(length(unique(normalized_BS_fiedv<-Re(BS_fiedv)/max(Re(BS_fiedv)))))
+for (i in 1:(length(V(BS)))){
+V(BS)$color[i] <- colfunc(normalized_BS_fiedv[i])
+}
+colfunc <- colorRampPalette(c("red", "blue"))
+colfunc(length(unique(normalized_BS_fiedv<-Re(BS_fiedv)/max(Re(BS_fiedv)))))
+for (i in 1:(length(V(BS)))){
+V(BS)$color[i] <- colfunc(normalized_BS_fiedv[i])
+}
+colfunc <- colorRampPalette(c("red", "blue"))
+colfunc(length(unique(normalized_BS_fiedv<-Re(BS_fiedv)/max(Re(BS_fiedv)))))
+# for (i in 1:(length(V(BS)))){
+#   V(BS)$color[i] <- colfunc(normalized_BS_fiedv[i])
+# }
+V(BS)$color <- colfunc(normalized_BS_fiedv)
+normalized_BS_fiedv
+min(normalized_BS_fiedv)
+normalized_BS_fiedv<-Re(BS_fiedv)/max(Re(BS_fiedv))
+colfunc <- colorRampPalette(c("red", "blue"))
+colfunc(length(unique(normalized_BS_fiedv)))
+# for (i in 1:(length(V(BS)))){
+#   V(BS)$color[i] <- colfunc(normalized_BS_fiedv[i])
+# }
+V(BS)$color <- colfunc(normalized_BS_fiedv)
+normalized_BS_fiedv
+normalized_BS_fiedv<-Re(BS_fiedv)/max(Re(BS_fiedv))
+normalized_BS_fiedv[normalized_BS_fiedv<0] <- 0
+colfunc <- colorRampPalette(c("red", "blue"))
+colfunc(length(unique(normalized_BS_fiedv)))
+# for (i in 1:(length(V(BS)))){
+#   V(BS)$color[i] <- colfunc(normalized_BS_fiedv[i])
+# }
+V(BS)$color <- colfunc(normalized_BS_fiedv)
+normalized_BS_fiedv
+max(normalized_BS_fiedv)
+average(normalized_BS_fiedv)
+mean(normalized_BS_fiedv)
+colfunc(normalized_BS_fiedv)
+sapply(colfunc, normalized_BS_fiedv)
+colfunc(mean(normalized_BS_fiedv))
+normalized_BS_fiedv<-Re(BS_fiedv)/max(Re(BS_fiedv))
+normalized_BS_fiedv[normalized_BS_fiedv<0] <- 0
+colfunc <- colorRampPalette(c("red", "blue"))
+colfunc(length(unique(normalized_BS_fiedv)))
+# for (i in 1:(length(V(BS)))){
+#   V(BS)$color[i] <- colfunc(normalized_BS_fiedv[i])
+# }
+colors <- colfunc(normalized_BS_fiedv)
+# plot(BS, vertex.label = NA, vertex.size = 2.5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS)$longitude), ylim = scale*range(V(BS)$latitude))
+colors
+colors[1]
+colfunc(normalized_BS_fiedv)
+colfunc(.5)
+colfunc(0)
+colfunc(1)
+colfunc(.88)
+colfunc(10)
+?plot
+?igraph-plot
+?plot.igraph
+normalized_BS_fiedv<-Re(BS_fiedv)/max(Re(BS_fiedv))
+# normalized_BS_fiedv[normalized_BS_fiedv<0] <- 0
+# colfunc <- colorRampPalette(c("red", "blue"))
+# for (i in 1:(length(V(BS)))){
+#   V(BS)$color[i] <- colfunc(normalized_BS_fiedv[i])
+# }
+# colors <- colfunc(normalized_BS_fiedv)
+# color.gradient <- function(x, colors=c("red", "blue"),
+#                            colsteps=100) {
+#   return(colorRampPalette(colors)(colsteps)[
+#     findInterval(x, seq(min(x), max(x), length.out=colsteps))
+#   ])
+# }
+plot(BS, vertex.label = NA, vertex.size = 2.5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS)$longitude), ylim = scale*range(V(BS)$latitude), mark.col = normalized_BS_fiedv)
+normalized_BS_fiedv<-Re(BS_fiedv)/max(Re(BS_fiedv))
+# normalized_BS_fiedv[normalized_BS_fiedv<0] <- 0
+# colfunc <- colorRampPalette(c("red", "blue"))
+# for (i in 1:(length(V(BS)))){
+#   V(BS)$color[i] <- colfunc(normalized_BS_fiedv[i])
+# }
+# colors <- colfunc(normalized_BS_fiedv)
+# color.gradient <- function(x, colors=c("red", "blue"),
+#                            colsteps=100) {
+#   return(colorRampPalette(colors)(colsteps)[
+#     findInterval(x, seq(min(x), max(x), length.out=colsteps))
+#   ])
+# }
+plot(BS, vertex.label = NA, vertex.size = 2.5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS)$longitude), ylim = scale*range(V(BS)$latitude), vertex.col = normalized_BS_fiedv)
+normalized_BS_fiedv<-Re(BS_fiedv)/max(Re(BS_fiedv))
+# normalized_BS_fiedv[normalized_BS_fiedv<0] <- 0
+# colfunc <- colorRampPalette(c("red", "blue"))
+# for (i in 1:(length(V(BS)))){
+#   V(BS)$color[i] <- colfunc(normalized_BS_fiedv[i])
+# }
+# colors <- colfunc(normalized_BS_fiedv)
+# color.gradient <- function(x, colors=c("red", "blue"),
+#                            colsteps=100) {
+#   return(colorRampPalette(colors)(colsteps)[
+#     findInterval(x, seq(min(x), max(x), length.out=colsteps))
+#   ])
+# }
+plot(BS, vertex.label = NA, vertex.size = 5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS)$longitude), ylim = scale*range(V(BS)$latitude), vertex.col = normalized_BS_fiedv)
+normalized_BS_fiedv<-Re(BS_fiedv)/max(Re(BS_fiedv))
+# normalized_BS_fiedv[normalized_BS_fiedv<0] <- 0
+# colfunc <- colorRampPalette(c("red", "blue"))
+# for (i in 1:(length(V(BS)))){
+#   V(BS)$color[i] <- colfunc(normalized_BS_fiedv[i])
+# }
+# colors <- colfunc(normalized_BS_fiedv)
+# color.gradient <- function(x, colors=c("red", "blue"),
+#                            colsteps=100) {
+#   return(colorRampPalette(colors)(colsteps)[
+#     findInterval(x, seq(min(x), max(x), length.out=colsteps))
+#   ])
+# }
+plot(BS, vertex.label = NA, vertex.size = 5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS)$longitude), ylim = scale*range(V(BS)$latitude), vertex.color = normalized_BS_fiedv)
+rainbow(length(V(BS)))
+?rainbow
+normalized_BS_fiedv<-Re(BS_fiedv)/max(Re(BS_fiedv))
+# normalized_BS_fiedv[normalized_BS_fiedv<0] <- 0
+# colfunc <- colorRampPalette(c("red", "blue"))
+# for (i in 1:(length(V(BS)))){
+#   V(BS)$color[i] <- colfunc(normalized_BS_fiedv[i])
+# }
+# colors <- colfunc(normalized_BS_fiedv)
+color.gradient <- function(x, colors=c("red", "blue"),
+colsteps=100) {
+return(colorRampPalette(colors)(colsteps)[
+findInterval(x, seq(min(x), max(x), length.out=colsteps))
+])
+}
+plot(BS, vertex.label = NA, vertex.size = 5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS)$longitude), ylim = scale*range(V(BS)$latitude), vertex.color = color.gradient(normalized_BS_fiedv))
+normalized_BS_fiedv<-Re(BS_fiedv)/max(Re(BS_fiedv))
+# normalized_BS_fiedv[normalized_BS_fiedv<0] <- 0
+# colfunc <- colorRampPalette(c("red", "blue"))
+# for (i in 1:(length(V(BS)))){
+#   V(BS)$color[i] <- colfunc(normalized_BS_fiedv[i])
+# }
+# colors <- colfunc(normalized_BS_fiedv)
+color.gradient <- function(x, colors=c("red", "blue"),
+colsteps=100) {
+return(colorRampPalette(colors)(colsteps)[
+findInterval(x, seq(min(x), max(x), length.out=colsteps))
+])
+}
+plot(BS, vertex.label = NA, vertex.size = 5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS)$longitude), ylim = scale*range(V(BS)$latitude), vertex.color = color.gradient(BS_fiedv))
+normalized_BS_fiedv<-Re(BS_fiedv)/max(Re(BS_fiedv))
+# normalized_BS_fiedv[normalized_BS_fiedv<0] <- 0
+# colfunc <- colorRampPalette(c("red", "blue"))
+# for (i in 1:(length(V(BS)))){
+#   V(BS)$color[i] <- colfunc(normalized_BS_fiedv[i])
+# }
+# colors <- colfunc(normalized_BS_fiedv)
+color.gradient <- function(x, colors=c("red", "blue"),
+colsteps=100) {
+return(colorRampPalette(colors)(colsteps)[
+findInterval(x, seq(min(x), max(x), length.out=colsteps))
+])
+}
+plot(BS, vertex.label = NA, vertex.size = 5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS)$longitude), ylim = scale*range(V(BS)$latitude), vertex.color = color.gradient(normalized_BS_fiedv))
+normalized_BS_fiedv<-Re(BS_fiedv)/max(Re(BS_fiedv))
+# normalized_BS_fiedv[normalized_BS_fiedv<0] <- 0
+# colfunc <- colorRampPalette(c("red", "blue"))
+# for (i in 1:(length(V(BS)))){
+#   V(BS)$color[i] <- colfunc(normalized_BS_fiedv[i])
+# }
+# colors <- colfunc(normalized_BS_fiedv)
+color.gradient <- function(x, colors=c("red", "blue"),
+colsteps=100) {
+return(colorRampPalette(colors)(colsteps)[
+findInterval(x, seq(min(x), max(x), length.out=colsteps))
+])
+}
+plot(BS, vertex.label = NA, vertex.size = 2.5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS)$longitude), ylim = scale*range(V(BS)$latitude), vertex.color = color.gradient(normalized_BS_fiedv))
+normalized_BS_fiedv<-Re(BS_fiedv)/max(Re(BS_fiedv))
+# normalized_BS_fiedv[normalized_BS_fiedv<0] <- 0
+# colfunc <- colorRampPalette(c("red", "blue"))
+# for (i in 1:(length(V(BS)))){
+#   V(BS)$color[i] <- colfunc(normalized_BS_fiedv[i])
+# }
+# colors <- colfunc(normalized_BS_fiedv)
+color.gradient <- function(x, colors=c("red", "yellow", "green"),
+colsteps=100) {
+return(colorRampPalette(colors)(colsteps)[
+findInterval(x, seq(min(x), max(x), length.out=colsteps))
+])
+}
+plot(BS, vertex.label = NA, vertex.size = 2.5, edge.width = 0.1,  edge.arrow.size =0.1, layout = location, rescale=FALSE, asp=0, xlim = scale*range(V(BS)$longitude), ylim = scale*range(V(BS)$latitude), vertex.color = color.gradient(normalized_BS_fiedv))
+normalized_BS_fiedv > 0
+which(normalized_BS_fiedv > 0)
+source("G:/Shared drives/F24 Research/Bus Network Code/bus.Rmd")
